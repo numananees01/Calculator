@@ -65,8 +65,8 @@ const handleVariable = () => {
   const variableName = prompt("Enter the variable name:");
   if (
     !variableName ||
-    variableName.tpLowerCase() == "pi" ||
-    variableName.tpLowerCase() == "e"
+    variableName.toLowerCase() == "pi" ||
+    variableName.toLowerCase() == "e"
   ) {
     alert("Invalid variable name!");
     return;
