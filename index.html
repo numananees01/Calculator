@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="table-container ml-4">
+      <table id="expressionTable">
+        <thead>
+          <tr>
+            <th>Expression</th>
+            <th>Value</th>
+            <th class="delete-heading">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-1">
+          <!-- Table rows will be added dynamically using JavaScript -->
+        </tbody>
+      </table>
+    </div>
+    <div class="calculator">
+      <input
+        type="text"
+        id="expressionInput"
+        class="expression-input"
+        placeholder="Enter expression here..."
+      />
+      <div class="output" id="outputDisplay"></div>
+      <div class="buttons">
+        <button class="button" onclick="appendToExpression('1')">1</button>
+        <button class="button" onclick="appendToExpression('2')">2</button>
+        <button class="button" onclick="appendToExpression('3')">3</button>
+        <button class="button" onclick="appendToExpression('4')">4</button>
+        <button class="button" onclick="appendToExpression('5')">5</button>
+        <button class="button" onclick="appendToExpression('6')">6</button>
+        <button class="button" onclick="appendToExpression('7')">7</button>
+        <button class="button" onclick="appendToExpression('8')">8</button>
+        <button class="button" onclick="appendToExpression('9')">9</button>
+        <button class="button" onclick="appendToExpression('0')">0</button>
+        <!-- ... (existing buttons) ... -->
+        <!-- Add other number buttons -->
+        <button class="button" onclick="appendToExpression('+')">+</button>
+        <button class="button" onclick="appendToExpression('-')">-</button>
+        <button class="button" onclick="appendToExpression('*')">*</button>
+        <button class="button" onclick="appendToExpression('/')">/</button>
+        <button class="button" onclick="appendToExpression('^')">^</button>
+        <button class="button" onclick="appendToExpression('sqrt(')">
+          sqrt
+        </button>
+        <button class="button" onclick="appendToExpression('sin(')">sin</button>
+        <button class="button" onclick="appendToExpression('cos(')">cos</button>
+        <button class="button" onclick="appendToExpression('tan(')">tan</button>
+        <button class="button" onclick="appendToExpression('.')">.</button>
+        <button class="button" onclick="appendToExpression('(')">(</button>
+        <button class="button" onclick="appendToExpression(')')">)</button>
+        <button class="button" onclick="appendToExpression('3.1415')">
+          Pi
+        </button>
+        <button class="button" onclick="appendToExpression('2.7182')">e</button>
+
+        <button class="button clear-btn" onclick="clearExpression()">C</button>
+        <button class="button result-btn" onclick="evaluateExpression()">
+          =
+        </button>
+      </div>
+    </div>
+    <div class="table-container">
+      <button onclick="handleVariable()">Add Variable</button>
+      <table id="expressionTable">
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Value</th>
+            <th class="delete-heading">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-2">
+          <!-- Table rows will be added dynamically using JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
