@@ -97,3 +97,7 @@ tr:nth-child(even) {
 .pointer {
   cursor: pointer;
 }
+.delete-button {
+  color: white;
+  background-color: red;
+}
